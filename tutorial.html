@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="tut-style.css">
+    <link rel="icon" type="image/x-icon" href="assets/bear.png">
+    <title>HAC Grade Predictor - Tutorial</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="assets/bear.png" alt="logo" height="32" width="35"></li>
+            <li id="title">Home Access Center Grade Predictor</li>
+            <li id="pages">
+                <a href="index.html">Home</a>
+                <a href="tutorial.html">Tutorial</a>
+            </li>
+            <li class="three-lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <table id="intro">
+            <tr>
+                <td id="img-cell"><img src="assets/full_bear.png"  id="tall-bear" alt="Bear Image"></td>
+                <td id="text-cell" class="description">
+                    <div id="notes">
+                        <p id="welcome">Welcome!</p>
+                        <p>Few notes on how it works: </p>
+                        <p> - The calculator predicts the grade needed to achieve or maintain.</p>
+                        <p>The minimum letter grade. For example, A = 89.5, B = 79.5, C = 69.5.</p>
+                        <p> - You don’t need to reset the entire calculation to change some inputs.</p> 
+                        <p>The results will update as long as you select a category.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="links">
+            <p id="click">Click the button for the tutorial based on your platform!</p>
+            <button class="tut-button" onclick="hacClick()">Website Tutorial</button>
+            <button class="tut-button" onclick="gwClick()">App (Gradeway) Tutorial</button>
+        </div>
+
+        <div id="hac-steps" class="steps">
+            <p class="steps-title">Website Tutorial</p>
+            <div class="demo">
+                <p>Example</p>
+                <img src="assets/hac_nums.png" class="demo-img" alt="Grades on HAC"> 
+                <br>
+                <img src="assets/hac_results.png" class="demo-img" alt="HAC results" width="500" height="200">
+            </div>
+            <div class="dir"> 
+                <p>Step 1. Start on the home page on HAC, which you can find at the top with a home icon.</p>
+                <p>Step 2. Click on a specific class highlighted in blue to predict your grades. A popup screen will appear.</p>
+                <p>Step 3. On the far right of the popup, find where it says "Category Points" and fill out the "Category Weighted Points" section (see image above).</p>
+                <p>Step 4. Choose the category for which you want a prediction. If needed, use the reset button to undo your selection.</p>
+                <p>Step 5. Find the row for the category you chose in step 3 and fill in the "Chosen Category's Points" section (see image above).</p>
+                <p>Optional: Enter a grade you think you might have received in that category.</p>
+                <p>Step 6. Click submit to see the results, which will indicate the grade you need in that category to achieve or maintain a letter grade.</p>
+                <p>Optional: Click the button to reset, or use the link below to calculate grades for finals.</p>
+            </div>
+        </div>
+
+        <div id="gw-steps" class="steps">
+            <p class="steps-title">App (Gradeway) Tutorial</p>
+            <div class="demo">
+                <p>Example</p>
+                <img src="assets/gw_nums.jpg" id="gw-nums" class="demo-img" alt="Grades on Gradeway"> 
+                <br>
+                <img src="assets/gw_results.png" class="demo-img" alt="Gradeway results">
+            </div>
+            <div class="dir">
+                <p>Step 1. Click on a specific class in the Grades tab, which you can find at the bottom with an A+ icon.</p>
+                <p>Step 2. Click on each category (CFU, RA, SA) to view "Weighted Points." Fill out the "Category Weighted Points" section (see image above).</p>
+                <p>Step 3. Choose the category for which you want a prediction. If needed, use the reset button to undo your selection.</p>
+                <p>Step 4. Click on the category you selected in Step 3 and fill in the "Chosen Category's Points" section (see image above).</p>
+                <p>Optional: Enter a grade you think you might have received in that category.</p>
+                <p>Step 6. Click submit to see the results, which will indicate the grade you need in that category to achieve or maintain a letter grade.</p>
+                <p>Optional: Click the button to reset, or use the link below to calculate grades for finals.</p>
+            </div>
+        </div>
+    </div>
+    <footer>Made by Rayna DeJesus</footer>
+    <script>
+        lines = document.querySelector(".three-lines");
+        lines.onclick = function(){
+            pages = document.querySelector("#pages");
+            pages.classList.toggle("active");
+        }
+
+        function hacClick() {
+            var hacScroll = document.getElementById("hac-steps");
+            var headerHeight = document.querySelector('nav').offsetHeight; 
+
+            if (hacScroll) {
+                window.scrollTo({
+                    top: hacScroll.getBoundingClientRect().top + window.pageYOffset - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function gwClick() {
+            var gwScroll = document.getElementById("gw-steps");
+            var headerHeight = document.querySelector('nav').offsetHeight; 
+
+            if (gwScroll) {
+                window.scrollTo({
+                    top: gwScroll.getBoundingClientRect().top + window.pageYOffset - headerHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+</html>

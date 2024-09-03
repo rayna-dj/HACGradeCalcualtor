@@ -1,0 +1,271 @@
+* {
+    text-align: center;
+    color: white;
+    /* font info */
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    flex-wrap: wrap;
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+/* nav bar */
+nav {
+    background-color: #1B2048;
+    width: 100%; 
+    position: fixed;
+    top: 0;
+    height: 60px;
+    border-radius: 0px 0px 15px 15px; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    margin: 0;
+}
+
+li img {
+    margin: 2px 0 0 2px;
+}
+
+#title {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    flex: 1; 
+    text-align: left;
+    margin-left: 20px;
+    white-space: nowrap; 
+}
+
+#pages {
+    display: flex;
+    gap: 16px;
+}
+
+#pages a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+#pages a:hover {
+    color: #dc7831;
+}
+
+.three-lines {
+    display: none; 
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.three-lines .line {
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+footer {
+    background-color: #1B2048;
+    color: white;
+    display: block;
+    padding: .5rem; 
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+#content {
+    text-align: center;
+    color: white;
+    margin: 60px auto 0 auto;
+    font-size: 16px;
+    width: 90%;
+}
+
+.dir {
+    width: 90%; 
+    margin: 0 auto;
+}
+
+.demo image {
+    padding: 20px;
+    margin: 20px;
+}
+
+.steps-title {
+    font-size: 20px;
+}
+
+.steps {
+    margin: 50px auto 30px auto;
+}
+
+.demo-img {
+    border-radius: 20px;
+    border: 2px solid #dc7831;
+    margin: 10px;
+    width: 500px;
+    height: 200px;
+}
+
+#gw-nums {
+    height: 130px;
+}
+
+#intro {
+    margin: 0 auto 20px auto;
+    text-wrap: wrap;
+}
+
+#welcome {
+    font-size: 25px;
+    color: #1B2048;
+    margin-bottom: 0px;
+}
+
+#click {
+    font-size: 18px;
+    margin: 20px auto 20px auto;
+}
+
+.tut-button {
+    background-color: #1B2048; 
+    width: 190px; 
+    color: white;
+    font-size: 12px;
+    border-radius: 16px;
+    padding: 10px 20px;
+    margin: auto 5px auto 5px;
+    border: none;
+    font-size: 12px;
+}
+
+#tall-bear {
+    margin: 60px 20px 0 0;
+    width: 200px;
+    height: 290px;
+}
+
+#text-cell {
+    margin-left: 10px;
+}
+
+#links{
+    margin-top: 20px;
+}
+
+/* display on smaller screens */
+@media only screen and (max-width: 900px) {
+    .three-lines {
+        display: flex;
+    }
+
+    #pages.active {
+        height: auto;
+        opacity: 1;
+    }
+
+    #pages.active a {
+        opacity: 1;
+    }
+
+    #pages {
+        display: flex;
+        flex-direction: column; 
+        height: 0; 
+        position: absolute;
+        opacity: 0;
+        overflow: hidden;
+        top: 50px; 
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #1B2048;
+        padding: 15px 0; 
+        padding-top: 30px;
+        border-radius: 0px 0px 15px 15px; 
+    }
+
+    #pages a {
+        display: block; 
+        width: 100%; 
+        opacity: 0;
+        font-size: 18px;
+        text-align: center; 
+        padding: 20px 0;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    #content {
+        font-size: 10px;
+    }
+
+    #title {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    #welcome {
+        font-size: 14px;
+    }
+
+    #click {
+        font-size: 12px;
+    }
+
+    .steps-title {
+        font-size: 14px;
+    }
+
+    .tut-button {
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+
+    .demo-img {
+        width: 80%;
+        height: 80%;
+    }
+
+    #gw-nums {
+        height: 75%;
+    }
+
+    #tall-bear {
+        margin-bottom: 40px;
+        width: 100%;
+        height: 50%;
+    }
+
+    #links{
+        margin: 0 auto;
+    }
+
+    .steps {
+        margin: 40px auto 30px auto;
+    }
+}

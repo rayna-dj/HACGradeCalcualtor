@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/bear.png" sizes="32x32">
+    <title>HAC Grade Predictor</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="assets/bear.png" alt="logo" height="32" width="35"></li>
+            <li id="title">Home Access Center Grade Predictor</li>
+            <li id="pages">
+                <a href="index.html">Home</a>
+                <a href="tutorial.html">Tutorial</a>
+            </li>
+            <li class="three-lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <div class="section" id="curr-points">
+            <p class="heading">Category Weighted Points</p>
+            <div class="inputs">
+                <label class="input-name" for="CFU-pts">Check for Understanding Points</label>
+                <input type="number" id="CFU-pts" placeholder="0.00">
+            </div>
+            <div class="inputs">
+                <label class="input-name" for="RA-pts">Relevant Applications Points</label>
+                <input type="number" id="RA-pts" placeholder="0.00">
+             </div>
+            <div class="inputs">
+                <label class="input-name" for="SA-pts">Summative Assesments Points</label>
+                <input type="number" id="SA-pts" placeholder="0.00">
+            </div>
+    </div>
+
+        <div class="section">
+            <p class="heading">Choose A Category</p>
+            <button class="cat-button" id="CFU-choice" onclick="categoryClick(0)">Check for Understanding</button>
+            <button class="cat-button" id="RA-choice" onclick="categoryClick(1)">Relevant Applications</button>
+            <button class="cat-button" id="SA-choice" onclick="categoryClick(2)">Summative Assesments</button>
+            <button id="reset-button" onclick="reset()">Reset Choice</button>
+        </div>
+
+        <div class="section" id="category-points">
+            <p class="heading">Chosen Category's Points</p>
+            <div class="inputs">
+                <label class="input-name" for="stu-pts">Student Points</label>
+                <input type="number" id="stu-pts" placeholder="0.00">
+            </div>
+            <div class="inputs">
+                <label class="input-name" for="max-pts">Max Points</label>
+                <input type="number" id="max-pts" placeholder="000.00">
+            </div>
+            <div class="inputs">
+                <label class="input-name" for="weight">Weight</label>
+                <input type="number" id="weight" placeholder="00.00">
+            </div>
+        </div>
+
+        <table id="optional">
+            <tr>
+                <td valign="middle" class="heading">Optional: Assignment coming up? Enter what you think you'll get and see the impact on your average</td>
+                <td valign="middle" class="inputs">
+                    <label class="input-name" id="op-label" for="predict">Predicted Grade</label>
+                    <input type="number" id="predict" placeholder="0.00">
+                </td>
+            </tr>
+        </table>
+
+        <button id="submit" onclick="checkSubmit()">Submit</button>
+
+        <div  id="results">
+            <p class="heading">Results:</p>
+                <p id="explain">Submit the required fields to see the predictions</p>
+                <p class="grades" id="A"></p>
+                <p class="grades" id="B"></p>
+                <p class="grades" id="C"></p>
+            <p id="pred-grade"></p>
+        </div>
+
+        <button id="reset-all"  onclick="reset('all')">Reset</button>
+        <p style="margin-top: 30px;">Want to calculate for finals? <a style="color: #dc7831;" href="https://docs.google.com/spreadsheets/d/1RI9Map1487pK0UtWZpsYdHqHLavmbgN_Oq_4Ga-ZwIA/edit?usp=sharing">Click here!</a></p>
+    </div>
+    <footer>Made by Rayna DeJesus</footer>
+    <script src="script.js"></script>
+</body>
+</html>

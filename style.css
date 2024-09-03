@@ -1,0 +1,299 @@
+*{
+    text-align: center;
+     /* font info */
+     font-family: "Plus Jakarta Sans", sans-serif;
+     font-optical-sizing: auto;
+     font-weight: 700;
+     font-style: normal;
+}
+
+body{
+    flex-wrap: wrap;
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0;
+}
+
+
+/* nav bar */
+nav {
+    background-color: #1B2048;
+    width: 100%; 
+    position: fixed;
+    top: 0;
+    height: 60px;
+    border-radius: 0px 0px 15px 15px; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    margin: 0;
+}
+
+li img {
+    margin: 2px 0 0 2px;
+}
+
+#title {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    flex: 1; 
+    text-align: left;
+    margin-left: 20px;
+    white-space: nowrap; 
+}
+
+#pages {
+    display: flex;
+    gap: 16px;
+}
+
+#pages a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+
+#pages a:hover {
+    color: #dc7831;
+}
+
+.three-lines {
+    display: none; 
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.three-lines .line {
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+footer{
+    background-color: #1B2048;
+    color: white;
+    display: block;
+    padding: .5rem; 
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+/* content */
+#content{
+    text-align: center;
+    color: white;
+    margin: 100px auto 0 auto;
+    font-size: 14px;
+}
+
+input{
+    border-radius: 16px;
+    padding: 10px 20px;
+    border: 10px;
+}
+
+button{
+    border-radius: 16px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.heading{
+    font-size: 18px;
+}
+  
+input, label {
+    margin-bottom: 0.4rem;
+    display:block;
+}
+
+.inputs{
+    padding: 0 10px 10px 10px;
+    display: inline-block; 
+}
+
+.input-name{
+    text-align: left;
+    color: #dc7831;
+    font-size:x-small;
+    margin-left: 10px;
+}
+
+#optional{
+   margin: 30px auto 20px auto;
+}
+
+.cat-button{
+    margin: 0 10px 10px 10px;
+    width: 250px;
+    background-color: #1B2048;
+    color: white;
+    font-size: 12px;
+
+}
+
+#reset-button{
+    background-color: #1B2048; 
+    width: 150px; 
+    color: white;
+    font-size: 12px;
+}
+
+#reset-all{
+    margin: 10px;
+    width: 350px;
+    background-color: #1B2048;
+    color: white;
+    font-size: 18px;
+}
+
+#submit{
+    background-color: #dc7831; 
+    color: white; 
+    width: 400px;
+    font-size: 18px;
+    margin: 15px auto 0px auto;
+}
+
+.section{
+    margin: 30px auto 0px auto;
+}
+
+.grades{
+    margin: 0 auto 40px auto;
+}
+
+#results{
+    margin: 40px auto 20px auto;
+}
+
+#reset-all{
+    color: white; 
+    width: 250px;
+    font-size: 18px;
+    margin: 0px auto 0px auto;
+}
+
+/* display on smaller screens */
+@media only screen and (max-width: 900px) {
+    .three-lines {
+        display: flex;
+    }
+
+    #pages.active{
+        height: auto;
+        opacity: 1;
+    }
+
+    #pages.active a {
+       opacity: 1;
+    }
+
+    #pages {
+        display: flex;
+        flex-direction: column; 
+        height: 0; 
+        position: absolute;
+        opacity: 0;
+        overflow: hidden;
+        top: 50px; 
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #1B2048;
+        padding: 15px 0; 
+        padding-top: 30px;
+        border-radius: 0px 0px 15px 15px; 
+    }
+
+    #pages a {
+        display: block; 
+        width: 100%; 
+        opacity:  0;
+        font-size: 18px;
+        text-align: center; 
+        padding: 20px 0;
+    }
+
+    footer{
+        width: 100%;
+        padding: 10px;
+    }
+
+    #content{
+        margin-top: 80px;
+        font-size: 12px;
+    }
+
+    #title{
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .heading{
+        font-size: 14px;
+    }
+
+    #optional {
+        display: block;
+    }
+
+    #optional tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    #optional td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #optional td.heading {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    #optional td.inputs {
+        margin: 15px auto 0 auto;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; 
+    }
+
+   .input-name{
+        text-align: center;
+    }
+
+    #submit{
+        font-size: 15px;
+        width: 90%;
+        align-items: center;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; 
+    }
+}
